@@ -27,3 +27,9 @@ print(f"Valor final: {res.valor.iloc[-1]:.3f}")
 print(f"Rentabilidad total: {res.valor.iloc[-1] - 1:+.1%}")
 print(f"Rebalanceos: {len(res.rotacion)}")
 print(f"Rotación media: {res.rotacion.mean():.3f}")
+
+from llm_memoria.backtest.metricas import metricas, metricas_comportamiento
+
+print()
+for nombre, valor in {**metricas(res.valor), **metricas_comportamiento(res)}.items():
+    print(f"{nombre:>20}: {valor:.3f}")
