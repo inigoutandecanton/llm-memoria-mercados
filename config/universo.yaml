@@ -1,0 +1,38 @@
+# Universo fijo de activos: 12 de EE. UU. y 8 de Europa.
+# Las rentabilidades se calculan en la divisa de cada acción.
+tickers:
+  - AAPL
+  - MSFT
+  - NVDA
+  - AMZN
+  - GOOGL
+  - META
+  - JPM
+  - XOM
+  - JNJ
+  - PG
+  - KO
+  - WMT
+  - ASML.AS
+  - SAP.DE
+  - MC.PA
+  - SIE.DE
+  - TTE.PA
+  - SAN.MC
+  - IBE.MC
+  - NESN.SW
+
+# pre_corte: periodo que los modelos pueden haber visto al entrenarse.
+# post_corte: periodo posterior a su fecha de corte (lo ajustaremos en la fase 2).
+periodos:
+  pre_corte:
+    inicio: "2022-01-01"
+    fin: "2023-12-31"
+  post_corte:
+    inicio: "2025-07-01"
+    fin: "2026-10-31"
+
+frecuencia: "W-FRI"       # una decisión por semana, al cierre del viernes
+calentamiento_dias: 400   # historia previa que se descarga (para medias de 200 días, etc.)
+coste_pb: 10              # coste de cada operación: 10 puntos básicos = 0,10 %
+retraso: 1                # se decide al cierre de un día y se ejecuta al cierre del siguiente
